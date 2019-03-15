@@ -55,6 +55,7 @@ public class CategoriaResource {
 		return ResponseEntity.noContent().build();
 	}
 	
+	//Verifica todos os clientes
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<List<CategoriaDTO>> findALL() {
 		List<Categoria> list= service.findAll();
@@ -62,6 +63,7 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(listDto);
 	}
 	
+	//Verifica os clientes com paginação
 	@RequestMapping(value="/page",method=RequestMethod.GET)
 	public ResponseEntity<Page<CategoriaDTO>> findPage(
 			@RequestParam(value="page", defaultValue="0")
