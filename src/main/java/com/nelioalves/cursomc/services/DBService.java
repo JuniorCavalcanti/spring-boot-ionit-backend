@@ -123,8 +123,8 @@ public class DBService {
 
 		Cliente cli2 = new Cliente(null, "Sara Rego", "conta571@gmail.com", "31628382740", TipoCliente.PESSOAFISICA, pe.encode("junior"));
 		cli2.getTelefones().addAll(Arrays.asList("27363223", "93838322"));
-		cli2.addPerfil(Perfil.ADMIN);
 		cli2.addPerfil(Perfil.CLIENTE);
+		cli2.addPerfil(Perfil.ADMIN);
 
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 101", "Jardim", "38220834", cli1, c1);
 		Endereco e2 = new Endereco(null, "Rua Matos", "102", "Sala 200", "Centro", "3877012", cli1, c2);

@@ -64,7 +64,7 @@ public class CategoriaResource {
 	
 	//Verifica todos os clientes
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<List<CategoriaDTO>> findALL() {
+	public ResponseEntity<List<CategoriaDTO>> findAll() {
 		List<Categoria> list= service.findAll();
 		List<CategoriaDTO> listDto = list.stream().map(obj  -> new CategoriaDTO(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
