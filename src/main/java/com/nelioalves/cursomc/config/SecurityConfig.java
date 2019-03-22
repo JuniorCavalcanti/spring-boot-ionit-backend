@@ -39,8 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private JWTUtil jwtUtil;
 	
 	private static final String[] PUBLIC_MATCHERS = {
-			"/h2-console/**",
-			"/auth/forgot/**"
+			"/h2-console/**"
 	};
 	
 
@@ -53,7 +52,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private static final String[] PUBLIC_MATCHERS_POST = {
 
-			"/clientes/**"
+			"/clientes**",
+			"/clientes/picture",
+			"/auth/forgot/**"
 	};
 	
 	
