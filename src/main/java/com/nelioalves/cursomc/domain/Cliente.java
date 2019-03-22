@@ -55,7 +55,7 @@ public class Cliente implements Serializable {
 	@OneToMany(mappedBy="cliente")
 	private List<Pedido> pedidos = new ArrayList<>();
 	
-	@JsonIgnore
+	private String imageURL;
 	public Cliente() {
 		addPerfil(Perfil.CLIENTE);
 	}
@@ -68,6 +68,7 @@ public class Cliente implements Serializable {
 		this.cpfOuCnpf = cpfOuCnpf;
 		this.tipo = (tipo == null) ? null : tipo.getCod();
 		this.senha = senha;
+		addPerfil(Perfil.CLIENTE);
 	}
 
 	public Integer getId() {
@@ -117,6 +118,15 @@ public class Cliente implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageUrl(String imageURL) {
+		this.imageURL = imageURL;
+	}	
+	
 	public Set<Perfil> getPerfis(){
 		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
 	}
@@ -172,5 +182,6 @@ public class Cliente implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}	
+	}
+
 }
